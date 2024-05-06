@@ -1,0 +1,89 @@
+package mouce;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+public class mouce {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Frame F = new Frame();
+		Label l = new Label("this is lable");
+		
+		F.addMouseListener(new MouseListener(){
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				F.setBackground(Color.black);
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				F.setBackground(Color.red);
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				F.setBackground(Color.BLUE);
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				F.setBackground(Color.BLUE);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				F.setBackground(Color.darkGray);
+				l.setText("mouce e");
+				
+			}
+			
+			
+			
+		});
+		
+			
+			
+			F.addMouseMotionListener(new MouseMotionListener() {
+
+				@Override
+				public void mouseDragged(MouseEvent e) {
+					// TODO Auto-generated method stub
+					l.setText("mouse  "+ e.getX() + " " + e.getY());
+				}
+
+				@Override
+				public void mouseMoved(MouseEvent e) {
+					// TODO Auto-generated method stub
+					F.setBackground(Color.CYAN);
+					
+				}
+				
+				
+				});
+			F.add(l);
+			F.setLayout(new FlowLayout());
+			F.setSize(300,300);;
+			F.setVisible(true);
+		}
+				
+				
+		
+		
+	}
+
+
+//package mouce;
